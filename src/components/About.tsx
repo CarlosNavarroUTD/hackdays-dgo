@@ -3,7 +3,6 @@ import { Users, Code2, Trophy } from "lucide-react"
 const stats = [
   { icon: Users, value: "300+", label: "Hackers esperados" },
   { icon: Code2, value: "24h", label: "De construcción" },
-  { icon: Trophy, value: "$$$", label: "En premios" },
 ]
 
 export function About() {
@@ -27,7 +26,7 @@ export function About() {
           </p>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-3">
+        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2">
           {stats.map((s) => (
             <div
               key={s.label}

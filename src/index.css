@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Orbitron", ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: #05070f;
+  --color-foreground: #f0f6ff;
+
+  --color-neon-cyan: #22e3ff;
+  --color-neon-blue: #2563ff;
+  --color-neon-magenta: #ff2bd6;
+  --color-neon-pink: #ff4d8d;
+  --color-neon-green: #41ff8f;
+  --color-neon-purple: #9b5cff;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .text-glow-cyan {
+    text-shadow: 0 0 8px rgba(34, 227, 255, 0.8), 0 0 24px rgba(34, 227, 255, 0.4);
+  }
+  .text-glow-magenta {
+    text-shadow: 0 0 8px rgba(255, 43, 214, 0.8), 0 0 24px rgba(255, 43, 214, 0.4);
+  }
+  .text-glow-green {
+    text-shadow: 0 0 8px rgba(65, 255, 143, 0.8), 0 0 24px rgba(65, 255, 143, 0.4);
+  }
+
+  .glass {
+    background: rgba(14, 20, 38, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}
+
+/* Rainbow ribbon at top */
+.rainbow-bar {
+  background: linear-gradient(
+    90deg,
+    #ff2bd6 0%,
+    #9b5cff 18%,
+    #2563ff 36%,
+    #22e3ff 54%,
+    #41ff8f 72%,
+    #ffd23f 86%,
+    #ff7a3d 100%
+  );
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+.animate-pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+.animate-ripple {
+  animation: ripple 5s linear infinite;
+}
+
+@keyframes scan {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 40px;
+  }
+}

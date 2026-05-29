@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  hackdays-dgo:
+    build: .
+    container_name: hackdays-dgo
+    restart: always
+    networks:
+      - axol-network
+
+networks:
+  axol-network:
+    external: true
